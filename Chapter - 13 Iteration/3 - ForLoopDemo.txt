@@ -1,0 +1,18 @@
+public class ForLoopDemo {
+
+    public static void main(String[] args) {
+        int count = 1;
+
+        for (count = 1; count <= 4;count++)
+        {
+            System.out.println("Count : " + count);
+        }
+    }
+}
+
+Output
+
+Count : 1
+Count : 2
+Count : 3
+Count : 4

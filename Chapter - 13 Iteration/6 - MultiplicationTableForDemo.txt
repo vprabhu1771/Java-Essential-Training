@@ -1,0 +1,25 @@
+public class MultiplicationTableForDemo {
+    public static void main(String[] args) {
+
+        int count;
+
+        int table_no = 2;
+
+        for (count=1; count <= 4; count++)
+        {
+            System.out.print(count + " * ");
+
+            System.out.print(table_no + " = ");
+
+            System.out.println((count*table_no));
+
+        }
+    }
+}
+
+Output
+
+1 * 2 = 2
+2 * 2 = 4
+3 * 2 = 6
+4 * 2 = 8

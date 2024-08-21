@@ -1,0 +1,13 @@
+public class StringIndexOfDemo {
+
+    public static void main(String[] args) {
+
+        String name1 = "prabhu";
+        
+        System.out.println(name1.indexOf('p'));
+    }
+}
+
+Output
+
+0

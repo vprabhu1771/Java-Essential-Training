@@ -1,0 +1,25 @@
+public class Addition {
+    public static void main(String[] args) {
+        int x = 2;
+
+        int y = 2;
+
+        System.out.print("x = ");
+
+        System.out.println(x);
+
+        System.out.print("y = ");
+
+        System.out.println(y);
+
+        System.out.println(x + " + " + y + " = " + (x+y));
+    }
+}
+
+Output
+
+x = 2
+
+y = 2
+
+2 + 2 = 4

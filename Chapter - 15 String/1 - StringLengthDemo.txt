@@ -1,0 +1,14 @@
+public class StringLengthDemo {
+
+    public static void main(String[] args) {
+        String name = "prabhu";
+
+        // return number of characters in string
+
+        System.out.println(name.length());
+    }
+}
+
+Output
+
+6

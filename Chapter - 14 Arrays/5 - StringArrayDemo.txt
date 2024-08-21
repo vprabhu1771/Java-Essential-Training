@@ -1,0 +1,29 @@
+public class StringArrayDemo {
+
+    public static void main(String[] args) {
+
+        int i;
+
+        // array initilization
+        String fruits[] = {"apple","Orange","Banana","Pineapple","Mango"};
+
+        for (i = 0; i < fruits.length; i++)
+        {
+            System.out.print("Index : " + i + " -> ");
+
+            System.out.println(fruits[i]);
+        }
+    }
+}
+
+Output
+
+Index : 0 -> apple
+
+Index : 1 -> Orange
+
+Index : 2 -> Banana
+
+Index : 3 -> Pineapple
+
+Index : 4 -> Mango

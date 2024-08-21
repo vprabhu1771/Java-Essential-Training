@@ -1,0 +1,20 @@
+public class WhileLoopDemo {
+
+    public static void main(String[] args) {
+        int count = 1;
+
+        while (count <= 4)
+        {
+            System.out.println("Count : " + count);
+            count++;
+        }
+
+    }
+}
+
+Output
+
+Count : 1
+Count : 2
+Count : 3
+Count : 4

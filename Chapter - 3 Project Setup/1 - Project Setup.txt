@@ -1,0 +1,37 @@
+Jetbrains Toolbox -> Intellij Idea Community Edition 
+
+Projects -> New Project
+
+Java -> Next
+
+untick Create project from template -> Next 
+
+Project Name: type hello_world
+
+Project Location: Leave default
+
+Click Finish and Wait till build complete
+
+process is going on
+
+
+
+Create Java File
+
+Open project panel -> right click src -> new -> java class -> HelloWorld -> select class -> Hit Enter
+
+
+
+Run Project
+
+CTRL + SHIFT + F10
+
+
+Rerun
+
+CTRL + F5
+
+
+Rename File Name
+
+Refactor -> rename

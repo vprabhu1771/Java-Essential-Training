@@ -1,0 +1,13 @@
+public class StringStartsWithDemo {
+
+    public static void main(String[] args) {
+
+        String name1 = "i am from cuddalore";
+        
+        System.out.println(name1.startsWith("i am for"));
+    }
+}
+
+Output
+
+false

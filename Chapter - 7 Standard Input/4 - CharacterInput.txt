@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class CharacterInput {
+    public static void main(String[] args) {
+
+        char gender;
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter your gender");
+
+        gender = scanner.next().charAt(0);
+
+        System.out.println("Your Gender is " + gender);
+    }
+}
+
+Output
+
+Enter your gender
+Male
+
+Your Gender is M
+
+
+Enter your gender
+Female
+
+Your Gender is F

@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class IntegerInput {
+    public static void main(String[] args) {
+
+        int x, y;
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter x value");
+
+        x = scanner.nextInt();
+
+        System.out.println("Enter y value");
+
+        y = scanner.nextInt();
+
+        System.out.println("x = " + x);
+
+        System.out.println("y = " + y);
+    }
+}
+
+Output
+Enter x value
+2
+
+Enter y value
+4
+
+x = 2
+
+y = 4

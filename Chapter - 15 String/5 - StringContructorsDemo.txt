@@ -1,0 +1,17 @@
+public class StringContructorsDemo
+{
+    public static void main(String[] args) {
+
+        char name1[] = {'p','r','a','b','h','u'};
+
+        String name2 = "prabhu";
+
+        String name3 = new String(name1);
+
+        System.out.println(name3);
+    }
+}
+
+Output
+
+prabhu

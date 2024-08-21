@@ -1,0 +1,31 @@
+public class StringDemo {
+
+    public static void main(String[] args) {
+
+        int i;
+
+        // array initilization
+        String data = "prabhu";
+
+        for (i = 0; i < data.length(); i++)
+        {
+            System.out.print("Index : " + i + " -> ");
+
+            System.out.println(data.charAt(i));
+        }
+    }
+}
+
+Output
+
+Index : 0 -> p
+
+Index : 1 -> r
+
+Index : 2 -> a
+
+Index : 3 -> b
+
+Index : 4 -> h
+
+Index : 5 -> u
