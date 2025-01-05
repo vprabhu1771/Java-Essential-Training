@@ -1,0 +1,17 @@
+    BufferedWriter wraps an existing Writer and adds buffering capabilities.
+    When writing characters, it accumulates data in its buffer before actually writing it to the underlying stream, reducing the number of write operations.
+
+import java.io.*;
+
+public class BufferedWriterExample {
+    public static void main(String[] args) {
+        try (FileWriter fileWriter = new FileWriter("output.txt");
+             BufferedWriter writer = new BufferedWriter(fileWriter)) {
+
+            String text = "Hello, buffered world!";
+            writer.write(text);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

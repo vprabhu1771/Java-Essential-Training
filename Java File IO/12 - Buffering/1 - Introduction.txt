@@ -1,0 +1,8 @@
+Buffering:
+
+    Understanding the importance of buffering for I/O efficiency.
+    Using buffered streams like java.io.BufferedInputStream and java.io.BufferedOutputStream.
+
+Buffering is a technique used in input and output operations to improve the efficiency of reading from or writing to streams, such as files or network connections. It involves using a buffer, which is a temporary memory storage, to hold a certain amount of data before it is actually read from or written to the underlying stream. Buffering can significantly reduce the number of direct interactions with the underlying system, which often involves slower disk or network operations.
+
+Buffering is commonly used to reduce the overhead associated with frequent I/O operations and can lead to improved performance in reading and writing data. In Java, buffering is often applied using the BufferedReader and BufferedWriter classes for character streams (Reader and Writer).

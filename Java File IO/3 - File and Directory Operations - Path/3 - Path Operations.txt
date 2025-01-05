@@ -1,0 +1,15 @@
+The Path class provides methods to manipulate paths, retrieve parts of paths, and perform various operations:
+
+import java.nio.file.*;
+
+public class PathOperationsExample {
+    public static void main(String[] args) {
+        Path path = Paths.get("path/to/file.txt");
+
+        System.out.println("File Name: " + path.getFileName());
+        System.out.println("Parent: " + path.getParent());
+        System.out.println("Root: " + path.getRoot());
+        System.out.println("Name Count: " + path.getNameCount());
+        System.out.println("Subpath: " + path.subpath(1, 3));
+    }
+}

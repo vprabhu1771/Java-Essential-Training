@@ -1,0 +1,39 @@
+FileVisitor Interface:
+
+The FileVisitor interface defines methods that are called when visiting files and directories during traversal. It's used with the Files.walkFileTree() method to recursively traverse a file tree and perform actions at each step of traversal.
+
+Here's a basic example of using a FileVisitor to print the names of all files and directories in a directory:
+
+import java.io.IOException;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
+
+public class FileVisitorExample {
+    public static void main(String[] args) {
+        Path startingDir = Paths.get("path/to/directory");
+
+        try {
+            Files.walkFileTree(startingDir, new SimpleFileVisitor<Path>() {
+                @Override
+                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                    System.out.println("File: " + file);
+                    return FileVisitResult.CONTINUE;
+                }
+
+                @Override
+                public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
+                    System.out.println("Directory: " + dir);
+                    return FileVisitResult.CONTINUE;
+                }
+
+                @Override
+                public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
+                    System.err.println("Failed to visit: " + file);
+                    return FileVisitResult.CONTINUE;
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

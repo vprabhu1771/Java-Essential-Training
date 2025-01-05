@@ -1,0 +1,18 @@
+To deserialize an object, you use ObjectInputStream. This class takes an input stream (e.g., a FileInputStream) and reads the serialized data to recreate the original object.
+
+import java.io.*;
+
+public class DeserializationExample {
+    public static void main(String[] args) {
+        try (FileInputStream fis = new FileInputStream("person.ser");
+             ObjectInputStream ois = new ObjectInputStream(fis)) {
+
+            Person person = (Person) ois.readObject();
+            System.out.println("Object deserialized:");
+            System.out.println("Name: " + person.getName());
+            System.out.println("Age: " + person.getAge());
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+}

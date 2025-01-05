@@ -1,0 +1,22 @@
+The File class provides methods for basic file operations like checking existence, deleting, creating directories, and more:
+
+import java.io.File;
+
+public class FileOperationsExample {
+    public static void main(String[] args) {
+        File file = new File("path/to/file.txt");
+
+        System.out.println("Exists: " + file.exists());
+        System.out.println("Is Directory: " + file.isDirectory());
+        System.out.println("Is File: " + file.isFile());
+
+        if (!file.exists()) {
+            try {
+                boolean created = file.createNewFile();
+                System.out.println("File Created: " + created);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}

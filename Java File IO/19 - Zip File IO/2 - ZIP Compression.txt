@@ -1,0 +1,33 @@
+The java.util.zip package provides classes to work with ZIP files. ZIP is a widely used file format that combines multiple files into a single archive while compressing them.
+
+    Compressing Files into a ZIP Archive:
+    You can use ZipOutputStream to compress files into a ZIP archive.
+
+import java.io.*;
+import java.util.zip.*;
+
+public class ZipCompressionExample {
+    public static void main(String[] args) {
+        try {
+            FileOutputStream fos = new FileOutputStream("archive.zip");
+            ZipOutputStream zipOut = new ZipOutputStream(fos);
+            
+            File fileToZip = new File("file.txt");
+            FileInputStream fis = new FileInputStream(fileToZip);
+            ZipEntry zipEntry = new ZipEntry(fileToZip.getName());
+            zipOut.putNextEntry(zipEntry);
+
+            byte[] bytes = new byte[1024];
+            int length;
+            while ((length = fis.read(bytes)) >= 0) {
+                zipOut.write(bytes, 0, length);
+            }
+
+            fis.close();
+            zipOut.close();
+            fos.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

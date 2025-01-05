@@ -1,0 +1,8 @@
+    Buffered streams don't necessarily write data to the underlying stream immediately. They wait until the buffer is full or until you explicitly flush the buffer.
+    Use the flush() method to force any buffered data to be written immediately.
+
+BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
+writer.write("Hello");
+writer.flush(); // Flush the buffer
+
+Buffering is particularly useful when working with smaller reads or writes, or when you want to optimize I/O performance by reducing the number of system calls. It's important to remember to close buffered streams (BufferedReader and BufferedWriter) after you're done using them to ensure that any remaining data in the buffer is flushed and resources are properly released.

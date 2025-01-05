@@ -1,0 +1,21 @@
+For writing to a file, you can use classes like File, FileWriter, and BufferedWriter.
+
+import java.io.*;
+
+public class FileWriterExample {
+    public static void main(String[] args) {
+        try {
+            File file = new File("output.txt");
+            FileWriter fileWriter = new FileWriter(file);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+            bufferedWriter.write("Hello, world!");
+            bufferedWriter.newLine();
+            bufferedWriter.write("This is a Java File I/O example.");
+
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

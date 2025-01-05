@@ -1,0 +1,17 @@
+File Filters:
+
+    Filtering files in a directory using java.io.FileFilter and java.io.FilenameFilter.
+
+File filters in Java provide a way to select specific files from a directory based on certain criteria. 
+They are commonly used when you want to list or manipulate files in a directory but only want to work with 
+files that meet specific conditions. Java provides two main interfaces for creating file filters: 
+java.io.FileFilter and java.io.FilenameFilter.
+
+When using file filters, keep in mind the following:
+
+    The filter criteria logic should be implemented in the accept() method.
+    You can implement complex filter conditions based on file properties like file size, last modified time, extension, etc.
+    Use the listFiles() method with a FileFilter for an array of filtered files or the list() method with a FilenameFilter for an array of filtered filenames.
+    Remember to handle exceptions and account for the possibility of null results if no files match the filter criteria.
+
+Additionally, you can combine file filters with other operations, such as recursively traversing directories using methods like Files.walkFileTree() in the java.nio.file package or by implementing your own directory traversal logic.

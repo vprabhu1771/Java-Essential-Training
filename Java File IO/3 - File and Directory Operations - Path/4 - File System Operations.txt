@@ -1,0 +1,14 @@
+You can perform various filesystem operations using Path:
+
+import java.nio.file.*;
+
+public class FileSystemOperationsExample {
+    public static void main(String[] args) {
+        Path path = Paths.get("path/to/file.txt");
+
+        System.out.println("Is Absolute: " + path.isAbsolute());
+        System.out.println("Exists: " + Files.exists(path));
+        System.out.println("Is Directory: " + Files.isDirectory(path));
+        System.out.println("Is Regular File: " + Files.isRegularFile(path));
+    }
+}

@@ -1,0 +1,12 @@
+public class App {
+
+    public static void main(String[] args) {
+
+        // User's Home Directory
+        System.out.println("User's Home Directory: " + System.getProperty("user.home"));
+
+    }
+}
+
+OUTPUT
+User's Home Directory: C:\Users\windows_rig3

@@ -1,0 +1,12 @@
+public class App {
+
+    public static void main(String[] args) {
+
+        // JRE version number
+        System.out.println("JRE version number: " + System.getProperty("java.version"));
+
+    }
+}
+
+OUTPUT
+JRE version number: 21.0.1

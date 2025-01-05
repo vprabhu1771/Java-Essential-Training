@@ -1,0 +1,23 @@
+import java.nio.charset.Charset;
+import java.nio.file.*;
+import java.io.*;
+
+public class CharacterEncodingExample {
+    public static void main(String[] args) {
+        try {
+            String text = "Hello, world!";
+
+            // Write the text to a file using UTF-8 encoding
+            Files.write(Paths.get("output.txt"), text.getBytes("UTF-8"));
+
+            // Read the text from the file using UTF-8 encoding
+            byte[] bytes = Files.readAllBytes(Paths.get("output.txt"));
+            String readText = new String(bytes, "UTF-8");
+
+            System.out.println("Original Text: " + text);
+            System.out.println("Read Text: " + readText);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,15 @@
+You can get metadata information about files using the length():
+
+import java.io.File;
+import java.util.Date;
+
+public class FileMetadataExample {
+
+    public static void main(String[] args) {
+
+        File file = new File("path/to/file.txt");
+
+        System.out.println("File Size: " + file.length() + " bytes");
+
+    }
+}

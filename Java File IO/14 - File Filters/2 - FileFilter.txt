@@ -1,0 +1,23 @@
+java.io.FileFilter:
+This interface is used to filter files based on various criteria. 
+The FileFilter interface has a single method accept(File pathname) that should be implemented. 
+It returns true if the file meets the filter's criteria, and false otherwise.
+
+import java.io.*;
+
+public class CustomFileFilter implements FileFilter {
+    @Override
+    public boolean accept(File pathname) {
+        return pathname.isFile() && pathname.getName().endsWith(".txt");
+    }
+
+    public static void main(String[] args) {
+        File directory = new File("path/to/directory");
+        File[] txtFiles = directory.listFiles(new CustomFileFilter());
+        for (File file : txtFiles) {
+            System.out.println(file.getName());
+        }
+    }
+}
+
+

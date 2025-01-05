@@ -1,0 +1,12 @@
+You can combine paths using the resolve() method:
+
+import java.nio.file.*;
+
+public class ResolvingPathsExample {
+    public static void main(String[] args) {
+        Path basePath = Paths.get("path/to");
+        Path relativePath = Paths.get("file.txt");
+        Path resolvedPath = basePath.resolve(relativePath);
+        System.out.println("Resolved Path: " + resolvedPath);
+    }
+}

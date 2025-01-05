@@ -1,0 +1,12 @@
+Implementing Serializable:
+
+To enable serialization for a class, you need to implement the Serializable interface. This interface doesn't have any methods; it's a marker interface that indicates that the class can be serialized.
+
+import java.io.Serializable;
+
+public class Person implements Serializable {
+    private String name;
+    private int age;
+
+    // Constructor, methods, etc.
+}

@@ -1,0 +1,20 @@
+Serialization:
+
+    Using java.io.Serializable interface to serialize and deserialize Java objects.
+    Object streams: java.io.ObjectInputStream and java.io.ObjectOutputStream.
+
+Serialization in Java is the process of converting objects into a format that can be easily stored in a file, sent over a network, or persisted in some other way. This process allows you to save the state of an object and later recreate it, which is especially useful for sharing data between different Java applications or for long-term storage.
+
+Java provides a built-in mechanism for serialization through the java.io.Serializable interface. If a class implements this interface, its objects can be serialized and deserialized. Here's an overview of how serialization works:
+
+
+Important points to consider:
+
+    The class being serialized (Person in the above examples) and any non-transient instance variables within it must be serializable.
+    If an instance variable is marked as transient, it won't be serialized. You might use this for sensitive data or for data that can be easily reconstructed.
+    Serialization and deserialization should be handled with care, as deserializing data from untrusted sources can lead to security vulnerabilities (deserialization attacks).
+    Serialization works for complex object graphs, but all referenced objects must also be serializable.
+
+Custom serialization logic can be implemented by defining two special methods: private void writeObject(ObjectOutputStream out) for writing and private void readObject(ObjectInputStream in) for reading. This allows you to control the serialization and deserialization process in more detail.
+
+Keep in mind that while Java's built-in serialization mechanism is straightforward, it's not the most efficient or flexible option, especially for more complex scenarios. In some cases, using libraries like Jackson, Gson, or Protocol Buffers might be more suitable.

@@ -1,0 +1,12 @@
+public class App {
+
+    public static void main(String[] args) {
+
+        // User account name
+        System.out.println("User account name: " + System.getProperty("user.name"));
+
+    }
+}
+
+OUTPUT
+User account name: windows_rig3

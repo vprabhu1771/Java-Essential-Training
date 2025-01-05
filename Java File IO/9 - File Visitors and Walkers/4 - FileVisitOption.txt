@@ -1,0 +1,64 @@
+The Files.walkFileTree() method also accepts additional options in the form of varargs, such as FileVisitOption.FOLLOW_LINKS to follow symbolic links during traversal.
+
+In Java NIO.2, the `FileVisitOption` is an enum that represents options used during file tree traversal when using the `Files.walkFileTree()` method. It provides options that affect the behavior of the traversal. The `FileVisitOption` is used as a varargs parameter alongside the `FileVisitor` when calling the `walkFileTree()` method.
+
+Here are the available options in the `FileVisitOption` enum:
+
+1. `FOLLOW_LINKS`:
+   This option indicates that symbolic links should be followed during traversal. If not specified, symbolic links are not followed.
+
+2. `FOLLOW_LINKS` Example:
+
+Here's an example code snippet that demonstrates how to use the FileVisitOption.FOLLOW_LINKS option when traversing a file tree using the Files.walkFileTree() method:
+   
+import java.io.IOException;
+import java.nio.file.;
+import java.nio.file.attribute.BasicFileAttributes;
+import java.util.EnumSet;
+
+public class FollowLinksExample {
+    public static void main(String[] args) {
+        Path startingDir = Paths.get("path/to/directory");
+
+        try {
+            Files.walkFileTree(startingDir, EnumSet.of(FileVisitOption.FOLLOW_LINKS), Integer.MAX_VALUE,
+                new SimpleFileVisitor<Path>() {
+                    @Override
+                    public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
+                        System.out.println("Entering directory: " + dir);
+                        return FileVisitResult.CONTINUE;
+                    }
+
+                    @Override
+                    public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                        System.out.println("File: " + file);
+                        return FileVisitResult.CONTINUE;
+                    }
+
+                    @Override
+                    public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
+                        System.err.println("Failed to visit: " + file);
+                        return FileVisitResult.CONTINUE;
+                    }
+
+                    @Override
+                    public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+                        System.out.println("Exiting directory: " + dir);
+                        return FileVisitResult.CONTINUE;
+                    }
+                });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+In this example, the FileVisitOption.FOLLOW_LINKS option is used in conjunction with the Files.walkFileTree() method to follow symbolic links during the traversal. This means that when a symbolic link to a directory is encountered, the traversal will enter the linked directory and continue the traversal from there. The traversal methods defined in the FileVisitor implementation will be called for each visited file or directory, including symbolic links that are followed.
+
+3. `FOLLOW_LINKS` Behavior:
+   When using `FOLLOW_LINKS`, the traversal will follow symbolic links to directories and continue the traversal within the linked directory. This option can result in visiting the same directory or file multiple times if it's reachable through different symbolic links.
+
+4. `FOLLOW_LINKS` and `MAX_DEPTH`:
+   The `Files.walkFileTree()` method accepts an additional parameter, `maxDepth`, which specifies the maximum depth of traversal. When following symbolic links, the depth is measured according to the number of symbolic link hops, not actual directory levels.
+
+Using the `FileVisitOption.FOLLOW_LINKS` option can be useful when you want to traverse a file tree while considering symbolic links and the files and directories they point to. It's important to understand the implications of following symbolic links, especially if you're dealing with potential circular references or if you want to avoid redundant traversals of the same directory through different links.

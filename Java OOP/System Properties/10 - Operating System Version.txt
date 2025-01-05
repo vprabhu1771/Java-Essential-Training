@@ -1,0 +1,12 @@
+public class App {
+
+    public static void main(String[] args) {
+
+        // Operating System Version
+        System.out.println("OS Version: " + System.getProperty("os.version"));
+
+    }
+}
+
+OUTPUT
+OS Version: 10.0

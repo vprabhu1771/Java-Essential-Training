@@ -1,0 +1,70 @@
+FileTreeWalker Class:
+	The Files class provides the walkFileTree() method, which accepts a FileVisitor and a starting directory. It walks through the file tree recursively and calls the appropriate methods of the FileVisitor.
+
+the `Files.walkFileTree()` method in Java NIO.2. This method is used to recursively traverse a file tree starting from a specified directory, while applying actions defined by a `FileVisitor` implementation at each step of the traversal.
+
+Here's an overview of how `Files.walkFileTree()` works:
+
+1. Method Signature:
+   ```java
+   void walkFileTree(Path start, FileVisitor<? super Path> visitor) throws IOException
+   ```
+   - `start`: The starting path for the traversal.
+   - `visitor`: An implementation of the `FileVisitor` interface that defines the actions to be taken during the traversal.
+
+2. Walking the File Tree:
+   The method recursively traverses the file tree rooted at the specified starting path. For each file or directory encountered during the traversal, the corresponding method of the `FileVisitor` is called.
+
+3. FileVisitor Interface:
+   The `FileVisitor` interface defines methods that are invoked during the traversal at different points. You provide an implementation of this interface to specify what should happen when visiting files and directories.
+
+   - `preVisitDirectory(Path dir, BasicFileAttributes attrs)`: Invoked before entering a directory. You can return `FileVisitResult.CONTINUE` to continue the traversal.
+   - `visitFile(Path file, BasicFileAttributes attrs)`: Invoked for each file encountered.
+   - `visitFileFailed(Path file, IOException exc)`: Invoked if an error occurs while trying to visit a file.
+   - `postVisitDirectory(Path dir, IOException exc)`: Invoked after all the entries in a directory, including subdirectories, have been visited.
+
+Here's a basic example demonstrating the usage of `Files.walkFileTree()` with a custom `FileVisitor` implementation:
+
+```java
+import java.io.IOException;
+import java.nio.file.;
+import java.nio.file.attribute.BasicFileAttributes;
+
+public class WalkFileTreeExample {
+    public static void main(String[] args) {
+        Path startingDir = Paths.get("path/to/directory");
+
+        try {
+            Files.walkFileTree(startingDir, new SimpleFileVisitor<Path>() {
+                @Override
+                public FileVisitResult preVisitDirectory(Path dir, BasicFileAttributes attrs) throws IOException {
+                    System.out.println("Entering directory: " + dir);
+                    return FileVisitResult.CONTINUE;
+                }
+
+                @Override
+                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                    System.out.println("File: " + file);
+                    return FileVisitResult.CONTINUE;
+                }
+
+                @Override
+                public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
+                    System.err.println("Failed to visit: " + file);
+                    return FileVisitResult.CONTINUE;
+                }
+
+                @Override
+                public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+                    System.out.println("Exiting directory: " + dir);
+                    return FileVisitResult.CONTINUE;
+                }
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+This code will traverse the file tree rooted at the specified directory and print the names of all files and directories encountered during the traversal. The methods defined in the `FileVisitor` implementation determine what actions are taken during the traversal process.

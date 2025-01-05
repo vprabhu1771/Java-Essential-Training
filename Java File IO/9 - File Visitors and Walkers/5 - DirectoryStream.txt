@@ -1,0 +1,24 @@
+Java's NIO.2 also provides the DirectoryStream interface, which simplifies directory listing and filtering.
+
+Here's a basic example of using a DirectoryStream to list all text files in a directory:
+
+import java.io.IOException;
+import java.nio.file.*;
+import java.nio.file.attribute.BasicFileAttributes;
+
+public class DirectoryStreamExample {
+    public static void main(String[] args) {
+        Path dir = Paths.get("path/to/directory");
+
+        try (DirectoryStream<Path> stream = Files.newDirectoryStream(dir, "*.txt")) {
+            for (Path file : stream) {
+                System.out.println("Text File: " + file);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+
+File visitors and walkers in the Java NIO.2 package provide a more elegant and flexible way to traverse file systems, interact with files and directories, and perform various actions during traversal. They are particularly useful for complex directory operations and can simplify your code when working with file trees.

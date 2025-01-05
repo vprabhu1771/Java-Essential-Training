@@ -1,0 +1,37 @@
+Character Encoding:
+
+    Understanding character encoding and character sets.
+    Specifying encoding when reading/writing text files using java.nio.charset.Charset.
+
+
+Character encoding is a crucial concept when dealing with text data in computers and communication systems. It refers to the method used to represent characters as binary data (numbers) so that computers can store, process, and transmit textual information. Different character encodings use different mappings between characters and their binary representations. Here are some key points about character encoding:
+
+1. ASCII (American Standard Code for Information Interchange):
+   - One of the earliest character encodings, representing English characters using 7 bits (128 characters).
+   - Limited to basic English characters, numbers, and a few symbols.
+
+2. Unicode:
+   - A universal character encoding standard that aims to cover all characters from all writing systems in the world.
+   - Characters are represented using numeric codes called "code points."
+   - UTF-8, UTF-16, and UTF-32 are different encoding schemes under Unicode.
+
+3. UTF-8 (Unicode Transformation Format - 8-bit):
+   - A variable-width encoding scheme for Unicode characters.
+   - Uses 1 to 4 bytes to represent characters, where ASCII characters use a single byte (backward compatible with ASCII).
+   - Most commonly used encoding on the web due to its efficiency and compatibility.
+
+4. UTF-16 (Unicode Transformation Format - 16-bit):
+   - Uses either 2 or 4 bytes to represent characters.
+   - Commonly used in programming languages like Java and JavaScript.
+
+5. UTF-32 (Unicode Transformation Format - 32-bit):
+   - Uses a fixed 4-byte encoding for all characters.
+   - Requires more memory than UTF-8 or UTF-16 but guarantees uniform encoding.
+
+6. Character Encoding in Java:
+   - In Java, `String` and `char` data types use UTF-16 encoding by default.
+   - The `java.nio.charset.Charset` class allows you to work with different character encodings.
+   - When reading/writing files, you can specify the desired character encoding.
+
+
+Understanding and choosing the right character encoding is essential to ensure that text data is accurately represented, transmitted, and processed across different systems and platforms. It's particularly important when dealing with internationalization and supporting various languages and scripts.

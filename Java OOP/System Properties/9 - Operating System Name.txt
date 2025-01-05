@@ -1,0 +1,12 @@
+public class App {
+
+    public static void main(String[] args) {
+
+        // Operating System Name
+        System.out.println("OS Name: " + System.getProperty("os.name"));
+
+    }
+}
+
+OUTPUT
+OS Name: Windows 10

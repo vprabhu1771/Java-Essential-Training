@@ -1,0 +1,20 @@
+Zip File I/O:
+Reading and writing ZIP files using java.util.zip.ZipInputStream and java.util.zip.ZipOutputStream.
+
+
+File compression is the process of reducing the size of files by encoding the data in a more efficient way. 
+In Java, you can work with file compression using various classes and libraries. Here are some ways to 
+perform file compression in Java:
+
+
+Apache Commons Compress:
+The Apache Commons Compress library provides more advanced features for working with various compression formats, 
+including ZIP, GZIP, TAR, and more. It offers additional flexibility and support for different compression algorithms.
+
+Java NIO.2:
+Starting from Java 7, the java.nio.file package provides facilities for creating ZIP files using 
+the java.nio.file.FileSystem interface. This approach is more flexible and allows you to work with ZIP files as 
+if they were directories.
+
+Remember that when working with compression, you should be mindful of handling exceptions, closing resources properly, 
+and checking for errors during compression and decompression operations.

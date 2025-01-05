@@ -1,0 +1,12 @@
+public class App {
+
+    public static void main(String[] args) {
+
+        // JRE vendor URL
+        System.out.println("JRE vendor URL: " + System.getProperty("java.vendor.url"));
+
+    }
+}
+
+OUTPUT
+JRE vendor URL: https://java.oracle.com/

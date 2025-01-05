@@ -1,0 +1,12 @@
+public class App {
+
+    public static void main(String[] args) {
+
+        // User's Current Working Directory
+        System.out.println("User's Current Working Directory: " + System.getProperty("user.dir"));
+
+    }
+}
+
+OUTPUT
+User's Current Working Directory: C:\Users\windows_rig3\IdeaProjects\HelloWorld

@@ -1,0 +1,12 @@
+You can obtain a relative path between two paths using relativize():
+
+import java.nio.file.*;
+
+public class RelativizingPathsExample {
+    public static void main(String[] args) {
+        Path path1 = Paths.get("path/to/file1.txt");
+        Path path2 = Paths.get("path/to/subdirectory/file2.txt");
+        Path relativePath = path1.relativize(path2);
+        System.out.println("Relative Path: " + relativePath);
+    }
+}

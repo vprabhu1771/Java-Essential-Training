@@ -1,0 +1,7 @@
+System Properties
+
+https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html
+
+In Properties, we examined the way an application can use Properties objects to maintain its configuration. The Java platform itself uses a Properties object to maintain its own configuration. The System class maintains a Properties object that describes the configuration of the current working environment. System properties include information about the current user, the current version of the Java runtime, and the character used to separate components of a file path name.
+
+The following table describes some of the most important system properties

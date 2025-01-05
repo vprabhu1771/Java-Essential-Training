@@ -1,0 +1,29 @@
+Binary File I/O: For reading and writing binary data, you can use classes like FileInputStream and FileOutputStream.
+
+import java.io.*;
+
+public class BinaryFileIOExample {
+    public static void main(String[] args) {
+        try {
+            File inputFile = new File("input.jpg");
+            File outputFile = new File("output.jpg");
+
+            FileInputStream inputStream = new FileInputStream(inputFile);
+            FileOutputStream outputStream = new FileOutputStream(outputFile);
+
+            byte[] buffer = new byte[1024];
+            int bytesRead;
+            while ((bytesRead = inputStream.read(buffer)) != -1) {
+                outputStream.write(buffer, 0, bytesRead);
+            }
+
+            inputStream.close();
+            outputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+Remember to handle exceptions properly using try-catch blocks or throwing them using the throws clause in method signatures.
+Additionally, when you're done with a file, make sure to close the associated streams to release system resources.

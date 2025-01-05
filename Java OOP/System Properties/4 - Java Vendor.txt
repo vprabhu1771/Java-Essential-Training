@@ -1,0 +1,12 @@
+public class App {
+
+    public static void main(String[] args) {
+
+        // Java Vendor
+        System.out.println("Java Vendor: " + System.getProperty("java.vendor"));
+
+    }
+}
+
+OUTPUT
+Java Vendor: Oracle Corporation

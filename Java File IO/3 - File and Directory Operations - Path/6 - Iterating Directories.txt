@@ -1,0 +1,17 @@
+You can use Files.walk() to iterate through a directory and its subdirectories:
+
+import java.io.IOException;
+import java.nio.file.*;
+import java.util.stream.Stream;
+
+public class DirectoryIteratorExample {
+    public static void main(String[] args) {
+        Path directory = Paths.get("path/to/directory");
+
+        try (Stream<Path> paths = Files.walk(directory)) {
+            paths.forEach(System.out::println);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

@@ -1,0 +1,3 @@
+Text File I/O:
+Using java.io.FileReader and java.io.FileWriter for reading and writing character-based data.
+Utilizing java.io.BufferedReader and java.io.BufferedWriter for efficient character-based reading and writing.

@@ -1,0 +1,12 @@
+public class App {
+
+    public static void main(String[] args) {
+
+        // Operating System Architecture
+        System.out.println("OS Architecture: " + System.getProperty("os.arch"));
+
+    }
+}
+
+OUTPUT
+OS Architecture: amd64

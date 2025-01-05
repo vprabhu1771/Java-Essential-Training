@@ -1,0 +1,10 @@
+You can create a Path instance using the Paths utility class:
+
+import java.nio.file.*;
+
+public class PathExample {
+    public static void main(String[] args) {
+        Path path = Paths.get("path/to/file.txt");
+        System.out.println("Path: " + path);
+    }
+}

@@ -1,0 +1,54 @@
+Error handling during file tree traversal using `Files.walkFileTree()` is an important aspect to consider. Errors can occur due to various reasons, such as permission issues, file not found, or I/O errors. Properly handling these errors helps ensure the reliability of your program and provides meaningful feedback to users when problems arise.
+
+Here are some strategies for handling errors during file tree traversal:
+
+1. **Using FileVisitor Methods:**
+   The methods of the `FileVisitor` interface provide opportunities to handle errors at different stages of traversal:
+   
+   - `visitFileFailed(Path file, IOException exc)`: This method is called when an exception occurs while visiting a file. You can use this method to handle specific file-related errors, such as permission issues or I/O errors.
+   
+   - `postVisitDirectory(Path dir, IOException exc)`: This method is called after visiting all the entries in a directory, including its subdirectories. You can use this to handle directory-specific errors.
+   
+   ```java
+   Files.walkFileTree(startingDir, new SimpleFileVisitor<Path>() {
+       @Override
+       public FileVisitResult visitFileFailed(Path file, IOException exc) throws IOException {
+           System.err.println("Failed to visit: " + file);
+           exc.printStackTrace();
+           return FileVisitResult.CONTINUE;
+       }
+
+       @Override
+       public FileVisitResult postVisitDirectory(Path dir, IOException exc) throws IOException {
+           if (exc != null) {
+               System.err.println("Error while visiting directory: " + dir);
+               exc.printStackTrace();
+           }
+           return FileVisitResult.CONTINUE;
+       }
+
+       // Other methods here
+   });
+   ```
+
+2. **Exception Handling:**
+   You can also use try-catch blocks around the entire `Files.walkFileTree()` call to catch exceptions and handle them at a higher level. This way, you can log errors and continue processing other files and directories.
+
+   ```java
+   try {
+       Files.walkFileTree(startingDir, new MyFileVisitor());
+   } catch (IOException e) {
+       e.printStackTrace();
+   }
+   ```
+
+3. **Logging:**
+   Using a logging framework like Java's built-in `java.util.logging` or third-party libraries like Log4j or SLF4J can help you manage and log errors more effectively. You can configure logging to capture error details and stack traces.
+
+4. **Rethrowing Exceptions:**
+   Depending on your use case, you might want to rethrow exceptions caught during traversal if they are severe or critical to your program's behavior. Be cautious when rethrowing exceptions to avoid suppressing relevant error messages.
+
+5. **User-Friendly Messages:**
+   When displaying error messages to users, provide clear and meaningful explanations of what went wrong and how to resolve the issue.
+
+Remember that proper error handling enhances the robustness of your program and makes it more user-friendly. It's important to strike a balance between logging detailed error information for debugging purposes and providing user-friendly messages that help users understand and address issues.

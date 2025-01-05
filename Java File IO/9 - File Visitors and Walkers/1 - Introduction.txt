@@ -1,0 +1,9 @@
+File Visitors and Walkers:
+	Walking through directories using java.nio.file.FileVisitor and java.nio.file.FileVisitOption.
+	Recursive file operations using java.nio.file.Files.walkFileTree().
+
+File visitors and walkers are part of Java's NIO.2 (New I/O) package introduced in Java 7. 
+They provide a powerful and flexible way to traverse and interact with file systems in a more structured manner 
+compared to traditional file I/O. The NIO.2 package includes the java.nio.file package, which contains classes and 
+interfaces for working with files and directories.
+
