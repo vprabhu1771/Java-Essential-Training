@@ -1,4 +1,4 @@
-# 1 - IntegerArrayDemo
+# 1 - Integer Array Demo
 ```
 public class IntegerArrayDemo {
 
@@ -30,7 +30,7 @@ Index : 2 -> 30
 Index : 3 -> 40
 ```
 
-# 2 - FloatArrayDemo
+# 2 - Float Array Demo
 ```
 public class FloatArrayDemo {
 
@@ -62,7 +62,7 @@ Index : 2 -> 30.0
 Index : 3 -> 40.0
 ```
 
-# 3 - DoubleArrayDemo
+# 3 - Double Array Demo
 ```
 public class DoubleArrayDemo {
 
@@ -94,7 +94,7 @@ Index : 2 -> 30.0
 Index : 3 -> 40.0
 ```
 
-# 4 - CharacterArrayDemo
+# 4 - Character Array Demo
 ```
 public class CharacterArrayDemo {
 
@@ -130,7 +130,7 @@ Index : 4 -> h
 Index : 5 -> u
 ```
 
-# 5 - StringArrayDemo
+# 5 - String Array Demo
 ```
 public class StringArrayDemo {
 
@@ -164,7 +164,7 @@ Index : 3 -> Pineapple
 Index : 4 -> Mango
 ```
 
-# 6 - StringDemo
+# 6 - String Demo
 ```
 public class StringDemo {
 
