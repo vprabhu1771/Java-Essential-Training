@@ -1,3 +1,5 @@
+# 1 - `HashDemo.java`
+```java
 public class HashDemo {
     public static void main(String[] args) {
 
@@ -10,3 +12,4 @@ public class HashDemo {
         System.out.println(name2.hashCode());
     }
 }
+```
