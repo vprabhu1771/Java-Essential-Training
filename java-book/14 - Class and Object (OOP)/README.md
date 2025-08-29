@@ -1,3 +1,14 @@
+# 1 - `Box.java`
+
+```java
+public class Box {
+    double width,height,depth;
+}
+```
+
+# 2 - `BoxDemo.java`
+
+```java
 public class BoxDemo {
     public static void main(String[] args) {
         Box obj = new Box();
@@ -21,3 +32,4 @@ public class BoxDemo {
         System.out.println(obj.depth);
     }
 }
+```
